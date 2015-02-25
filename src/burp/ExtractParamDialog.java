@@ -441,6 +441,7 @@ public class ExtractParamDialog extends JFrame implements ActionListener  {
     	private Pattern inputFieldPattern;
     	private final Pattern contentTypePattern = Pattern.compile("^Content-Type: (.*)$");
     	private Pattern[] excludedPatterns;
+    	private static final String ILLEGAL_VALUE_MESS = "Invalid escaped value during URLDecode, ignoring decoding.";
     	
     	private boolean isExcluded(String[] headers) {
     		if (headers != null && excludedPatterns.length > 0) {
@@ -494,9 +495,7 @@ public class ExtractParamDialog extends JFrame implements ActionListener  {
     						processMessage(requestList[i].getRequest(), url,i);
     					if (searchResponse)
     						processMessage(requestList[i].getResponse(), url,i);
-    				}	
-    				
-			
+    				}
     			} catch (Exception e) {
     				e.printStackTrace();
     			}
@@ -544,6 +543,10 @@ public class ExtractParamDialog extends JFrame implements ActionListener  {
 								svalue = URLDecoder.decode(svalue, "UTF-8");
 							} catch (UnsupportedEncodingException e) {
 								System.out.println(e.getMessage());
+								mCallbacks.issueAlert(e.getMessage());
+							} catch (IllegalArgumentException e) {
+								System.out.println(ILLEGAL_VALUE_MESS);
+								mCallbacks.issueAlert(ILLEGAL_VALUE_MESS);
 							}
 						publish(new ResValue(svalue, url,proxyId));
 						}
