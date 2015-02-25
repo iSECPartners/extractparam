@@ -18,7 +18,7 @@ public class BurpExtender implements IBurpExtender {
 	private static IBurpExtenderCallbacks burp;
 	private static PrintWriter errOut;
 	private static PrintWriter stdOut;
-	private static final String VERSION = "1.1";
+	private static final String VERSION = "1.2";
 	
 	public BurpExtender() {
 
