@@ -1,11 +1,7 @@
 ExtractParam Burp plugin
 ========
 
-# Usage
-* right click in a request/response panel
-* select "extract param values"
-
-Note: highlighting the parameter will populate the field value automatically
+> Released under GPL see LICENSE for more information
 
 ## description
 This plugin will extract all the values of the given parameter name within the Burp proxy logs.
@@ -21,7 +17,11 @@ It is possible to export the values list, or the URLs where those value were fou
 
 It also includes some exclusions filters, such as urls in scope, response/requests only, or Content-Type based.
 
-> Released under AGPL see LICENSE for more information
+## Usage
+* right click in a request/response panel
+* select "extract param values"
+
+Note: highlighting the parameter will populate the field value automatically
 
 ## Build requirements
 
