@@ -88,15 +88,12 @@ public class ExtractParamContextMenu implements IContextMenuFactory {
 		        	selection = contextMenu.getSelectionBounds();
 		        	if (selection[0] != selection[1]) {
 		        		sdata = callbacks.getHelpers().bytesToString(Arrays.copyOfRange(data,selection[0], selection[1]));
-		        	} else {
-		        		sdata = callbacks.getHelpers().bytesToString(data);
 		        	}
 	        	} else {
 	        		System.out.println("Data is null");
 	        	}
 	        }
 			paramDialog = new ExtractParamDialog(callbacks, sdata);
-			paramDialog.setTitle("Extracting parameters/fields");
 			paramDialog.pack();
 			paramDialog.setLocationRelativeTo(null);
 			paramDialog.setVisible(true);
