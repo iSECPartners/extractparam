@@ -68,7 +68,7 @@ public class ExtractParamContextMenu implements IContextMenuFactory {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			String sdata = new String();
+			String sdata = "";
 			byte contextInv = contextMenu.getInvocationContext();
 	        request = contextInv == IContextMenuInvocation.CONTEXT_MESSAGE_EDITOR_REQUEST ||
 	        		contextInv == IContextMenuInvocation.CONTEXT_MESSAGE_VIEWER_REQUEST ||
