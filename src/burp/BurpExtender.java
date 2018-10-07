@@ -20,10 +20,6 @@ public class BurpExtender implements IBurpExtender {
 	private static PrintWriter stdOut;
 	private static final String VERSION = "1.2";
 	
-	public BurpExtender() {
-
-	}
-	
 	@Override
 	public void registerExtenderCallbacks(IBurpExtenderCallbacks callbacks) {
 		errOut = new PrintWriter(callbacks.getStderr());
